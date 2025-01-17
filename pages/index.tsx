@@ -7,13 +7,13 @@ import type { NextPage } from 'next'
 
 const Home: NextPage = () => {
   return (
-    <>
+    <div className='mt-6'>
       <Hero />
       <Summary />
       <Education />
-      {/*<Repos />*/}
+      <Repos />
       <Ports />
-    </>
+    </div>
   )
 }
 

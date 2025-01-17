@@ -467,48 +467,7 @@ export const Portifolios = () => {
           }
         }
       ]
-    } /*,
-    {
-      id: 'clgkq1hm70008xe7cguymvfrn',
-      layout: '/images/portifolio/asfsan.png',
-      name: 'ASFSAN',
-      site: 'https://moacyrsantana.vercel.app/',
-      category: 'profissional',
-      description:
-        'This website was built during Fullstack Master classes. We used NextJS + SSR (Server Side Rendering) + Vercel (as platform) You can find the source-code of this website at:https://github.com/juniorvilasboas/moacyrsantana.dev',
-      skills: [
-        {
-          id: 'clgkpzq4m0004xe7cm3kcncff',
-          name: 'html5',
-          site: '#',
-          ext: 'original-wordmark',
-          tipo: 'Front-end',
-          levelId: 'clgkowglp0006xetg2jv4t8ui',
-          level: {
-            id: 'clgkowglp0006xetg2jv4t8ui',
-            item: 2,
-            value: '2',
-            label: 'Intermediate',
-            description: 'Level 1 + small projects or internships'
-          }
-        },
-        {
-          id: 'clgkq028q0006xe7ccm2axq1c',
-          name: 'css3',
-          site: '#',
-          ext: 'original-wordmark',
-          tipo: 'Front-end',
-          levelId: 'clgkowglp0006xetg2jv4t8ui',
-          level: {
-            id: 'clgkowglp0006xetg2jv4t8ui',
-            item: 2,
-            value: '2',
-            label: 'Intermediate',
-            description: 'Level 1 + small projects or internships'
-          }
-        }
-      ]
-    }*/
+    }
   ]
 
   return portifolio

@@ -1,102 +1,146 @@
-import Image from 'components/Image/image'
-import Link from 'next/link'
+import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-import React from 'react'
+import Link from 'next/link'
+import Img from 'components/Image/image'
 
+const link = ['', 'education', 'experience', 'portifolio', 'painel']
 interface Props {
   children: React.ReactNode
   id?: string
 }
 
-const Menu = ({ children }: Props) => {
-  return <>{children}</>
-}
+const Menu = () => {
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
 
-const MenuNav = ({ children }: Props) => {
-  return <nav className='bg-dourado'>{children}</nav>
-}
+  const router = useRouter()
+  const { pathname } = router
 
-const MenuLogo = () => {
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
-    <div className='flex-shrink-0 flex items-center'>
-      <span className='block lg:hidden w-auto'>
-        <Image className='h-6 w-auto' src='/logo_short.png' alt='Resume' />
-      </span>
-      <Image
-        className='hidden lg:block h-6 w-auto'
-        src='/logo_long.png'
-        alt='Workflow'
-      />
-    </div>
+    <header
+      className={`bg-dourado shadow-md z-50 transition-all duration-300 ${
+        isScrolled
+          ? 'fixed top-0 left-0 w-full'
+          : 'relative top-8 w-11/12 mx-auto rounded-xl'
+      }`}
+    >
+      <MenuBrand>
+        {/* Menu Desktop */}
+        <nav className='hidden md:flex lg:space-x-6 text-sm'>
+          {link.map((item) => (
+            <MenuDesktop
+              key={item}
+              css={
+                `/${item}` === pathname
+                  ? 'bg-padrao text-white'
+                  : 'text-white hover:bg-padrao hover:text-white'
+              }
+              href={`/${item === 'home' ? '' : item}`}
+              text={item === '' ? 'HOME' : item.toUpperCase()}
+            />
+          ))}
+        </nav>
+
+        {/* Menu Hambúrguer */}
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className='block md:hidden text-white'
+        >
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            className='h-6 w-6'
+            fill='#fff'
+            viewBox='0 0 24 24'
+            stroke='currentColor'
+          >
+            <path
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              strokeWidth={2}
+              d='M4 6h16M4 12h16M4 18h16'
+            />
+          </svg>
+        </button>
+      </MenuBrand>
+      {/* Menu Mobile */}
+      {menuOpen && (
+        <div className='md:hidden bg-dourado shadow-lg'>
+          {link.map((item) => (
+            <MenuMobile
+              key={item}
+              css={
+                `/${item}` === pathname
+                  ? 'bg-padrao text-white'
+                  : 'text-white hover:bg-padrao hover:text-white'
+              }
+              onClick={() => setMenuOpen(!menuOpen)}
+              href={`/${item === 'home' ? '' : item}`}
+              text={item === '' ? 'HOME' : item.toUpperCase()}
+            />
+          ))}
+        </div>
+      )}
+    </header>
   )
 }
 
 const MenuBrand = ({ children }: Props) => {
   return (
-    <div className='max-w-7xl mx-auto px-2 sm:px-6 lg:px-8'>
-      <div className='relative flex items-center justify-between h-16'>
+    <>
+      <div className='container mx-auto flex items-center justify-between px-4 py-3'>
+        {/* Logo e Nome */}
+        <div className='flex items-center space-x-2'>
+          <Img
+            src='/logo_long.png'
+            alt='Logo'
+            w={500}
+            h={500}
+            className='h-6 lg:h-10 w-full'
+          />
+        </div>
         {children}
       </div>
-    </div>
+    </>
   )
 }
 
 interface PropsLink {
-  children: React.ReactNode
   href: string
+  text: string
+  css?: string
+  onClick?: any
 }
 
-const MenuWebLink = ({ children, href }: PropsLink) => {
-  const router = useRouter()
-  const { pathname } = router
-  const selected = pathname === href
+const MenuDesktop = ({ href, text, css }: PropsLink) => {
   return (
-    <Link
-      href={href}
-      className={`px-3 py-2 rounded-md text-sm font-medium ${
-        selected
-          ? 'bg-padrao text-white'
-          : 'text-gray-300 hover:bg-padrao hover:text-white'
-      }`}
-    >
-      {children}
+    <Link href={href} className={`${css} py-2 px-4 rounded-xl`}>
+      {text}
     </Link>
   )
 }
 
-const MenuMobile = ({ children, id }: Props) => {
+const MenuMobile = ({ href, text, css, onClick }: PropsLink) => {
   return (
-    <div className='sm:hidden' id='mobile-menu'>
-      <div id={id} className='px-2 pt-2 pb-3 space-y-1'>
-        {children}
-      </div>
-    </div>
-  )
-}
-
-const MenuMobileLink = ({ children, href }: PropsLink) => {
-  const router = useRouter()
-  const { pathname } = router
-  const selected = pathname === href
-  return (
-    <Link
-      href={href}
-      className={` block px-3 py-2 rounded-md text-base font-medium ${
-        selected
-          ? 'bg-gray-900 text-white'
-          : 'text-gray-300 hover:bg-gray-700 hover:text-white'
-      }`}
-    >
-      {children}
+    <Link href={href} onClick={onClick} className={`${css} block px-4 py-2`}>
+      {text}
     </Link>
   )
 }
 
-Menu.Nav = MenuNav
-Menu.Logo = MenuLogo
 Menu.Brand = MenuBrand
-Menu.WebLink = MenuWebLink
+Menu.Desktop = MenuDesktop
 Menu.Mobile = MenuMobile
-Menu.MobileLink = MenuMobileLink
 
 export default Menu

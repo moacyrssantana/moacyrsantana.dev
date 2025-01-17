@@ -14,7 +14,7 @@ const Ports = () => {
             Portfolios
           </Link>
         </h3>
-        <div className='w-full md:grid md:grid-cols-2 lg:grid-cols-3 bg-white mx-auto leading-none shadow-lg rounded-xl p-2 md:p-6'>
+        <div className='w-full md:grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 bg-white mx-auto leading-none shadow-lg rounded-xl p-2 md:p-6'>
           {
             //@ts-ignore
             portifolios.map((portifolio, i) => (

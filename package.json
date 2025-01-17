@@ -26,6 +26,7 @@
     "date-fns": "^2.29.3",
     "eslint": "8.30.0",
     "eslint-config-next": "13.1.1",
+    "flowbite-react": "^0.10.2",
     "form-data": "^4.0.0",
     "fs": "^0.0.1-security",
     "multer": "^1.4.5-lts.1",
