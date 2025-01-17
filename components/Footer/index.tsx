@@ -18,7 +18,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <Link href={'https://moacyrsantana.vercel.app/'}>
+        <Link href={'https://moacyrsantana.vercel.app/'} target='_blank'>
           <p className='text-center text-sm'>MAP Studio © 2020 - {year}</p>
         </Link>
       </footer>
