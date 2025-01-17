@@ -1,9 +1,11 @@
 import { useGet } from 'hooks/api'
 import Link from 'next/link'
 import PortsItem from './PortsItem'
+import { Portifolios } from 'components/Banco'
 
 const Ports = () => {
-  const { data: portifolios } = useGet('/api/portifolio')
+  //const { data: portifolios } = useGet('/api/portifolio')
+  const portifolios = Portifolios()
   if (portifolios && portifolios.length > 0) {
     return (
       <div>

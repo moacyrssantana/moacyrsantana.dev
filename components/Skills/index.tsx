@@ -1,8 +1,10 @@
 import { useGet } from 'hooks/api'
 import SkilItem from './SkilItem'
+import { Skills } from 'components/Banco'
 
-const Skills = () => {
-  const { data: skills } = useGet('/api/skill')
+const Skill = () => {
+  //const { data: skills } = useGet('/api/skill')
+  const skills = Skills()
   return (
     <div className='relative border-2 rounded-xl shadow-lg px-8 md:px-14 pb-4 py-10 mt-6'>
       <h3 className='absolute text-sm md:text-xl py-1 px-6 top-0 -mt-6 bg-white border-2 inline-block rounded-xl font-bold'>
@@ -41,4 +43,4 @@ const Skills = () => {
   )
 }
 
-export default Skills
+export default Skill

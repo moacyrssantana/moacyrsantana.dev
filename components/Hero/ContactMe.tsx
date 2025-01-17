@@ -13,7 +13,7 @@ const ContactMe = () => {
         <Link href='http://www.linkedin.com/in/moacyrsantana' target='_black'>
           <FaLinkedin className='text-4xl lg:text-5xl hover:text-dourado inline-block mr-6 md:mr-4 lg:mr-8' />
         </Link>
-        <Link href='https://github.com/juniorvilasboas' target='_black'>
+        <Link href='https://github.com/moacyrssantana' target='_black'>
           <FaGithub className='text-4xl lg:text-5xl hover:text-dourado inline-block mr-6 md:mr-4 lg:mr-8' />
         </Link>
         <Link

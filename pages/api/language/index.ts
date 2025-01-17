@@ -2,7 +2,7 @@ import { Language, Prisma } from '@prisma/client'
 import { NextApiRequest, NextApiResponse } from 'next'
 import { create, getLanguage } from 'services/language'
 
-const Language = async (
+const LanguageApi = async (
   req: NextApiRequest,
   res: NextApiResponse<Language | null>
 ) => {
@@ -20,4 +20,4 @@ const Language = async (
   return res.send(languages)
 }
 
-export default Language
+export default LanguageApi

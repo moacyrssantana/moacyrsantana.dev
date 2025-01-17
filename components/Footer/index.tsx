@@ -1,31 +1,26 @@
+import Link from 'next/link'
 import Social from './Social'
+import Img from 'components/Image/image'
 
 const Footer = () => {
   const year = new Date().getFullYear()
   return (
-    <div className='py-10 mt-10 border-t-2 drop-shadow-[0_10px_3px_rgba(0,0,0,0.25)]'>
+    <div className='bg-dourado mt-10 border-t-2 drop-shadow-[0_10px_3px_rgba(0,0,0,0.25)]'>
       <footer>
-        <div className='text-center mb-6 px-2'>
-          <p className='text-xs md:text-base'>
-            This website was built during Fullstack Master classes. We used
-            NextJS + SSR (Server Side Rendering) + Vercel (as platform)
-          </p>
-          <p className='text-xs md:text-base'>
-            You can find the source-code of this website at:
-          </p>
-          <a
-            className='text-xs md:text-base hover:underline'
-            href='https://github.com/juniorvilasboas/moacyrsantana.dev'
-            target='_blank'
-            rel='noreferrer'
-          >
-            https://github.com/juniorvilasboas/moacyrsantana.dev
-          </a>
+        <div className='flex justify-center mx-auto text-black my-8 w-3/5'>
+          <div className='flex mt-4 mr-20'>
+            <Img src={'/logo_long.png'} w={500} h={500} css={'w-72 m-auto'} />
+          </div>
+          <div className='p-4'>
+            <p>Siga-nos</p>
+            <ul className='flex mt-6 space-x-4'>
+              <Social />
+            </ul>
+          </div>
         </div>
-        <Social />
-        <p className='text-center text-sm mt-3.5'>
-          Serveware Sistemas © 2020 - {year}
-        </p>
+        <Link href={'https://moacyrsantana.vercel.app/'}>
+          <p className='text-center text-sm'>MAP Studio © 2020 - {year}</p>
+        </Link>
       </footer>
     </div>
   )

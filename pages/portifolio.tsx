@@ -3,9 +3,11 @@ import Page from 'components/Page'
 import SkilImage from 'components/Skills/SkilImage'
 import { useGet } from 'hooks/api'
 import Link from 'next/link'
+import { Portifolios } from 'components/Banco'
 
 const Portifolio = () => {
-  const { data: portifolios } = useGet('/api/portifolio')
+  //const { data: portifolios } = useGet('/api/portifolio')
+  const portifolios = Portifolios()
   return (
     <div>
       <Page title='Portifolio' />
@@ -16,12 +18,12 @@ const Portifolio = () => {
               key={portifolio.id}
               className='flex bg-white dark:bg-gray-600 rounded-lg shadow-xl divide-x md:mx-4 lg:mr-6 mb-4'
             >
-              <div className='flex-none w-24 md:w-48 relative'>
+              <div className='flex w-24 md:w-48 relative'>
                 <div className='py-6 px-2 w-24 md:w-48 text-right text-sm md:text-lg font-bold'>
                   <Image
                     src={portifolio.layout}
                     alt='shopping image'
-                    css='absolute rounded-lg inset-0 w-full object-cover my-auto'
+                    css='absolute rounded-lg inset-0 w-11/12 object-cover m-auto'
                   />
                 </div>
               </div>

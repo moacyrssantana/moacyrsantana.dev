@@ -1,9 +1,11 @@
 import { useGet } from 'hooks/api'
 import Link from 'next/link'
 import EducationItem from './EducationItem'
+import { Educations } from 'components/Banco'
 
 const Education = () => {
-  const { data: educations } = useGet('/api/education')
+  //const { data: educations } = useGet('/api/education')
+  const educations = Educations()
   if (educations && educations.length > 0) {
     return (
       <div>

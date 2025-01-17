@@ -2,9 +2,11 @@ import Page from 'components/Page'
 import { format } from 'date-fns'
 import { useGet } from 'hooks/api'
 import Link from 'next/link'
+import { Educations } from 'components/Banco'
 
 const Education = () => {
-  const { data: degrees } = useGet('/api/education')
+  //const { data: degrees } = useGet('/api/education')
+  const degrees = Educations()
   return (
     <div>
       <Page title='education' />

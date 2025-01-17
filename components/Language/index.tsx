@@ -1,7 +1,9 @@
 import { useGet } from 'hooks/api'
+import { Languages } from 'components/Banco'
 
 const Language = () => {
-  const { data: languages } = useGet('/api/language')
+  //const { data: languages } = useGet('/api/language')
+  const languages = Languages()
   if (languages && languages.length > 0) {
     return (
       <div>

@@ -2,7 +2,7 @@ import { Portifolio, Prisma } from '@prisma/client'
 import { NextApiRequest, NextApiResponse } from 'next'
 import { create, getPortifolio } from 'services/portifolio'
 
-const Portifolio = async (
+const PortifolioApi = async (
   req: NextApiRequest,
   res: NextApiResponse<Portifolio | null>
 ) => {
@@ -21,4 +21,4 @@ const Portifolio = async (
   return res.send(portifolios)
 }
 
-export default Portifolio
+export default PortifolioApi

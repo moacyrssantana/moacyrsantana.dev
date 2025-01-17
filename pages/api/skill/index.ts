@@ -2,7 +2,7 @@ import { Skill, Prisma } from '@prisma/client'
 import { NextApiRequest, NextApiResponse } from 'next'
 import { create, getSkill, getSkillByName, getSkillSelect } from 'services/skill'
 
-const Skill = async (req: NextApiRequest, res: NextApiResponse<Skill | null>) => {
+const SkillAPI = async (req: NextApiRequest, res: NextApiResponse<Skill | null>) => {
   if (req.method === 'POST') {
     const skill: Prisma.SkillCreateInput = { ...req.body }
 
@@ -38,4 +38,4 @@ const Skill = async (req: NextApiRequest, res: NextApiResponse<Skill | null>) =>
   return res.send(skills)
 }
 
-export default Skill
+export default SkillAPI

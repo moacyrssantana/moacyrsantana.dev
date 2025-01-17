@@ -2,7 +2,7 @@ import { Experience, Prisma } from '@prisma/client'
 import { NextApiRequest, NextApiResponse } from 'next'
 import { create, getExperience } from 'services/experience'
 
-const Experience = async (
+const ExperienceApi = async (
   req: NextApiRequest,
   res: NextApiResponse<Experience | null>
 ) => {
@@ -20,4 +20,4 @@ const Experience = async (
   return res.send(experiences)
 }
 
-export default Experience
+export default ExperienceApi

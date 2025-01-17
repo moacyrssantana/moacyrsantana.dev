@@ -2,7 +2,7 @@ import { Education, Prisma } from '@prisma/client'
 import { NextApiRequest, NextApiResponse } from 'next'
 import { create, getEducation } from 'services/education'
 
-const Education = async (
+const EducationApi = async (
   req: NextApiRequest,
   res: NextApiResponse<Education | null>
 ) => {
@@ -20,4 +20,4 @@ const Education = async (
   return res.send(educations)
 }
 
-export default Education
+export default EducationApi

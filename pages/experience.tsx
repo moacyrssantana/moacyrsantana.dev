@@ -2,9 +2,11 @@ import React from 'react'
 import { useGet } from 'hooks/api'
 import { format } from 'date-fns'
 import Page from 'components/Page'
+import { Experiences } from 'components/Banco'
 
 const Experience = () => {
-  const { data: experiences } = useGet('/api/experience')
+  //const { data: experiences } = useGet('/api/experience')
+  const experiences = Experiences()
   return (
     <div>
       <Page title='Experience' />
