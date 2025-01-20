@@ -143,7 +143,7 @@ export default NextAuth({
     async signIn({ user }) {
       if (user !== undefined) {
         //@ts-ignore
-        if (user.isActive === '1') {
+        if (user.isActive === true) {
           return user
         }
       }

@@ -38,7 +38,6 @@ const SignIn = () => {
   })
 
   const onSubmit: SubmitHandler<NewSigninForm> = async (inputs) => {
-    console.log('Signin: ', inputs)
     const res = await signIn('credentials', {
       email: inputs.email,
       password: inputs.password,

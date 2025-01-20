@@ -6,7 +6,7 @@ export const Languages = () => {
     {
       id: 'clgnxh2ax0002xey0v181v19i',
       item: 1,
-      name: 'potuguese',
+      name: 'portuguese',
       understandingId: 'clgkoxx9s000oxetg6vi2gq8i',
       speakingId: 'clgkoxx9s000oxetg6vi2gq8i',
       writingId: 'clgkoxx9s000oxetg6vi2gq8i',
@@ -350,7 +350,7 @@ export const Educations = () => {
       institution: 'Devpleno',
       site: 'go.devpleno.com/fsm',
       degree: 'Improvement Course',
-      subject: 'Fullstack Maste',
+      subject: 'Fullstack Master',
       courseload: 300,
       begin: '2020-01-10T00:00:00.000Z',
       end: null

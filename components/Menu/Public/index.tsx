@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Img from 'components/Image/image'
 
-const link = ['', 'education', 'experience', 'portifolio', 'painel']
+const link = ['', 'education', 'experience', 'portifolio']
 interface Props {
   children: React.ReactNode
   id?: string

@@ -3,7 +3,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import { create, getUser, getIdUser } from 'services/user'
 import bcrypt from 'bcrypt'
 
-const User = async (req: NextApiRequest, res: NextApiResponse<User | null>) => {
+const UserApi = async (req: NextApiRequest, res: NextApiResponse<User | null>) => {
   if (req.method === 'POST') {
     const user: Prisma.UserCreateInput = { ...req.body }
 
@@ -28,4 +28,4 @@ const User = async (req: NextApiRequest, res: NextApiResponse<User | null>) => {
   return res.send(user)
 }
 
-export default User
+export default UserApi

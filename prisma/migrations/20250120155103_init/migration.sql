@@ -37,7 +37,7 @@ CREATE TABLE "User" (
     "password" TEXT NOT NULL,
     "emailVerified" TIMESTAMP(3),
     "image" TEXT,
-    "isActive" CHAR(1) NOT NULL DEFAULT '1',
+    "isActive" BOOLEAN NOT NULL DEFAULT true,
 
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")
 );
@@ -65,7 +65,7 @@ CREATE TABLE "Language" (
     "id" TEXT NOT NULL,
     "item" SERIAL NOT NULL,
     "name" VARCHAR(255) NOT NULL,
-    "understandingId" VARCHAR(255) NOT NULL,
+    "understandId" VARCHAR(255) NOT NULL,
     "speakingId" VARCHAR(255) NOT NULL,
     "writingId" VARCHAR(255) NOT NULL,
 
@@ -160,6 +160,27 @@ CREATE UNIQUE INDEX "VerificationToken_token_key" ON "VerificationToken"("token"
 CREATE UNIQUE INDEX "VerificationToken_identifier_token_key" ON "VerificationToken"("identifier", "token");
 
 -- CreateIndex
+CREATE UNIQUE INDEX "Level_id_key" ON "Level"("id");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Language_id_key" ON "Language"("id");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Education_id_key" ON "Education"("id");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Experience_id_key" ON "Experience"("id");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Information_id_key" ON "Information"("id");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Portifolio_id_key" ON "Portifolio"("id");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Skill_id_key" ON "Skill"("id");
+
+-- CreateIndex
 CREATE UNIQUE INDEX "_PortifolioToSkil_AB_unique" ON "_PortifolioToSkil"("A", "B");
 
 -- CreateIndex
@@ -172,7 +193,7 @@ ALTER TABLE "Account" ADD CONSTRAINT "Account_userId_fkey" FOREIGN KEY ("userId"
 ALTER TABLE "Session" ADD CONSTRAINT "Session_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "Language" ADD CONSTRAINT "Language_understandingId_fkey" FOREIGN KEY ("understandingId") REFERENCES "Level"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "Language" ADD CONSTRAINT "Language_understandId_fkey" FOREIGN KEY ("understandId") REFERENCES "Level"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "Language" ADD CONSTRAINT "Language_speakingId_fkey" FOREIGN KEY ("speakingId") REFERENCES "Level"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
