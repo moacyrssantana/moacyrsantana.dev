@@ -13,8 +13,7 @@ async function main() {
             lastName: 'Santana',
             email: 'moacyrssantana@gmail.com',
             password: await bcrypt.hash('030510@Santana#', 0),
-            image: '/images/user/foto.jpg',
-            isActive: true
+            image: '/images/user/foto.jpg'
         }
     })
     const information = await prisma.information.upsert({
