@@ -9,7 +9,13 @@ const Footer = () => {
       <footer>
         <div className='flex justify-center mx-auto text-black my-8 w-11/12 md:w-3/5'>
           <div className='flex mt-4 mr-12 md:mr-20'>
-            <Img src={'/logo_long.png'} w={500} h={500} css={'w-72 m-auto'} />
+            <Img
+              src={'/logo_long.png'}
+              alt={'Logo'}
+              w={500}
+              h={500}
+              css={'w-72 m-auto'}
+            />
           </div>
           <div className='p-2 md:p-4'>
             <p>Siga-nos</p>
@@ -19,7 +25,7 @@ const Footer = () => {
           </div>
         </div>
         <Link href={'https://moacyrsantana.vercel.app/'} target='_blank'>
-          <p className='text-center text-sm'>MAP Studio © 2020 - {year}</p>
+          <p className='text-center text-sm'>MAP Studio</p>
         </Link>
       </footer>
     </div>

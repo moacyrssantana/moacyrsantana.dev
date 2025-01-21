@@ -35,12 +35,12 @@ const Hero = () => {
         <Image
           src='/images/nodejs.png'
           alt='nodejs'
-          css='absolute z-10 h-16 w-16 ml-64 sm:ml-72 lg:ml-80 mt-14 lg:mt-12 animate-bounce'
+          css='absolute z-10 h-16 w-16 ml-56 sm:ml-72 lg:ml-80 mt-14 lg:mt-12 animate-bounce'
         />
         <Image
           src='/images/javascript.png'
           alt='javascript'
-          css='absolute z-10 h-16 w-16 ml-80 sm:ml-80 lg:ml-96 mt-52 lg:mt-60 animate-bounce'
+          css='absolute z-10 h-16 w-16 ml-64 sm:ml-80 lg:ml-96 mt-52 lg:mt-60 animate-bounce'
         />
         <Image
           src='/images/back-network.png'
@@ -51,6 +51,7 @@ const Hero = () => {
         <Image
           src='/images/foto.png'
           alt='foto'
+          priority
           css='esquerda mx-auto h-80 w-80 lg:h-96 lg:w-96 mt-12 md:mt-2 pt-4 sm:ml-8 lg:ml-16'
         />
       </div>

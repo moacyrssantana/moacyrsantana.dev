@@ -7,8 +7,8 @@ const reposition = async (username: any) => {
   const originalRepos = await resRepos.json()
 
   const dontShowRepos = [
-    'juniorvilasboas/teste',
-    'juniorvilasboas/juniorvilasboas'
+    'moacyrssantana/teste',
+    'moacyrssantana/moacyrssantana'
   ]
 
   const isNotFork = (repo: any) => !repo.fork
